@@ -40,6 +40,9 @@ public class PatientEntity {
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<VisitEntity> visits; // Relacja dwustronna
 
+	@Column(nullable = false)
+    private Integer age;
+
 	public Long getId() {
 		return id;
 	}
@@ -94,6 +97,22 @@ public class PatientEntity {
 
 	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+    public Integer getAge() {
+		return age;
+    }
+
+    public List<VisitEntity> getVisits() {
+		return visits;
+    }
+
+    public void setAge(Integer age2) {
+		this.age = age2;
+    }
+
+	public void setVisits(List<VisitEntity> singletonList) {
+		this.visits = singletonList;
 	}
 
 }

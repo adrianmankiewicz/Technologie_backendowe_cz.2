@@ -1,6 +1,7 @@
 package com.jpacourse.persistence.entity;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -62,5 +63,25 @@ public class VisitEntity {
 	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
+
+    public DoctorEntity getDoctor() {
+		return doctor;
+    }
+
+	public Collection<MedicalTreatmentEntity> getTreatments() {
+		return treatments;
+	}
+
+    public void setPatient(PatientEntity patient2) {
+		this.patient = patient2;
+    }
+
+    public void setDoctor(DoctorEntity doctor2) {
+		this.doctor = doctor2;
+    }
+
+    public void setPatientId(Long patientId) {
+		this.patient.setId(patientId);
+    }
 
 }
