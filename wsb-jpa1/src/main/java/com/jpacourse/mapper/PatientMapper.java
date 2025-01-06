@@ -28,7 +28,7 @@ public final class PatientMapper {
         return patientTO;
     }
 
-    private static VisitTO mapVisitToTO(final VisitEntity visitEntity) {
+    public static VisitTO mapVisitToTO(final VisitEntity visitEntity) {
         if (visitEntity == null) {
             return null;
         }

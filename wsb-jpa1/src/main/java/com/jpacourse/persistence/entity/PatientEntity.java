@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table(name = "PATIENT")
@@ -42,6 +43,9 @@ public class PatientEntity {
 
 	@Column(nullable = false)
     private Integer age;
+
+	@Version
+    private Long version;
 
 	public Long getId() {
 		return id;
@@ -115,4 +119,15 @@ public class PatientEntity {
 		this.visits = singletonList;
 	}
 
+	public Long getVersion() {
+		if (version == null) {
+			version = 0L;
+		}
+
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 }
